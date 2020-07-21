@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-12 col-md-8">
+    <app-shopping-edit></app-shopping-edit>
+    <hr />
+    <div class="list-group">
+      <a
+        class="list-group-item list-group-item-action flex-column align-items-start"
+        *ngFor="
+          let ingredient of (ingredients | async).ingredients;
+          let i = index
+        "
+        (click)="onEdit(i)"
+      >
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </a>
+    </div>
+  </div>
+</div>
